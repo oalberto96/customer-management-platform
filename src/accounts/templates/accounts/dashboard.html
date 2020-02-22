@@ -20,7 +20,11 @@
         {% for customer_order in customers_orders %}
         <tr>
           <td></td>
-          <td>{{ customer_order.customer.name }}</td>
+          <td>
+            <a href="{% url 'customer' customer_order.customer.id %}">
+              {{ customer_order.customer.name }}
+            </a>
+          </td>
           <td>{{ customer_order.orders_count }}</td>
         </tr>
         {% endfor %}
